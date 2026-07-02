@@ -1,5 +1,5 @@
-read_verilog counter.v
+read_verilog rtl/counter.v
 
 synth -top counter
 
-write_verilog counter_netlist.v
+write_verilog synthesis/counter_netlist.v
