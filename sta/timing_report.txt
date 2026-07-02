@@ -1,0 +1,371 @@
+acer@LAPTOP-NEA968MP:/mnt/d/project/counter$ cd /mnt/d/project/counter
+sta sta/run_sta.tcl
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details.
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: There is 1 input port missing set_input_delay.
+Warning: There are 4 output ports missing set_output_delay.
+Warning: There are 4 unconstrained endpoints.
+
+========================================
+          DESIGN SUMMARY
+========================================
+Error: run_sta.tcl, 21 invalid command name "report_design_area"
+
+========================================
+         SETUP ANALYSIS
+========================================
+Startpoint: _22_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout      Cap     Slew    Delay     Time   Description
+--------------------------------------------------------------------------------
+                  0.000    0.000    0.000   clock clk (rise edge)
+                           0.000    0.000   clock network delay (ideal)
+                  0.000    0.000    0.000 ^ _22_/CK (DFF_X1)
+                  0.026    0.104    0.104 ^ _22_/Q (DFF_X1)
+    6   10.297                              count[0] (net)
+                  0.026    0.000    0.104 ^ _14_/A3 (AND3_X1)
+                  0.020    0.060    0.164 ^ _14_/ZN (AND3_X1)
+    3    6.119                              _05_ (net)
+                  0.020    0.000    0.164 ^ _20_/B1 (OAI21_X1)
+                  0.010    0.017    0.181 v _20_/ZN (OAI21_X1)
+    1    1.845                              _08_ (net)
+                  0.010    0.000    0.181 v _21_/A (AOI21_X1)
+                  0.020    0.038    0.219 ^ _21_/ZN (AOI21_X1)
+    1    1.450                              _03_ (net)
+                  0.020    0.000    0.219 ^ _25_/D (DFF_X1)
+                                    0.219   data arrival time
+
+                  0.000   10.000   10.000   clock clk (rise edge)
+                           0.000   10.000   clock network delay (ideal)
+                           0.000   10.000   clock reconvergence pessimism
+                                   10.000 ^ _25_/CK (DFF_X1)
+                          -0.035    9.965   library setup time
+                                    9.965   data required time
+--------------------------------------------------------------------------------
+                                    9.965   data required time
+                                   -0.219   data arrival time
+--------------------------------------------------------------------------------
+                                    9.747   slack (MET)
+
+
+
+========================================
+          HOLD ANALYSIS
+========================================
+Startpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout      Cap     Slew    Delay     Time   Description
+--------------------------------------------------------------------------------
+                  0.000    0.000    0.000   clock clk (rise edge)
+                           0.000    0.000   clock network delay (ideal)
+                  0.000    0.000    0.000 ^ _25_/CK (DFF_X1)
+                  0.013    0.091    0.091 ^ _25_/Q (DFF_X1)
+    3    4.395                              count[3] (net)
+                  0.013    0.000    0.091 ^ _21_/B2 (AOI21_X1)
+                  0.006    0.015    0.106 v _21_/ZN (AOI21_X1)
+    1    1.372                              _03_ (net)
+                  0.006    0.000    0.106 v _25_/D (DFF_X1)
+                                    0.106   data arrival time
+
+                  0.000    0.000    0.000   clock clk (rise edge)
+                           0.000    0.000   clock network delay (ideal)
+                           0.000    0.000   clock reconvergence pessimism
+                                    0.000 ^ _25_/CK (DFF_X1)
+                           0.002    0.002   library hold time
+                                    0.002   data required time
+--------------------------------------------------------------------------------
+                                    0.002   data required time
+                                   -0.106   data arrival time
+--------------------------------------------------------------------------------
+                                    0.104   slack (MET)
+
+
+
+========================================
+       TIMING CHECK SUMMARY
+========================================
+wns 0.00
+tns 0.00
+worst slack 9.75
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                      10.00        0.00      5.00
+Warning: run_sta.tcl, 42 report_checks -summary is not a known keyword or flag.
+Startpoint: _22_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _22_/CK (DFF_X1)
+   0.10    0.10 ^ _22_/Q (DFF_X1)
+   0.06    0.16 ^ _14_/ZN (AND3_X1)
+   0.02    0.18 v _20_/ZN (OAI21_X1)
+   0.04    0.22 ^ _21_/ZN (AOI21_X1)
+   0.00    0.22 ^ _25_/D (DFF_X1)
+           0.22   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+          10.00 ^ _25_/CK (DFF_X1)
+  -0.03    9.97   library setup time
+           9.97   data required time
+---------------------------------------------------------
+           9.97   data required time
+          -0.22   data arrival time
+---------------------------------------------------------
+           9.75   slack (MET)
+
+
+OpenSTA> exit
+Saving command history
+acer@LAPTOP-NEA968MP:/mnt/d/project/counter$ cd /mnt/d/project/counter
+sta sta/run_sta.tcl
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details.
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: There is 1 input port missing set_input_delay.
+Warning: There are 4 output ports missing set_output_delay.
+Warning: There are 4 unconstrained endpoints.
+
+========================================
+          DESIGN SUMMARY
+========================================
+
+========================================
+         SETUP ANALYSIS
+========================================
+Startpoint: _22_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout      Cap     Slew    Delay     Time   Description
+--------------------------------------------------------------------------------
+                  0.000    0.000    0.000   clock clk (rise edge)
+                           0.000    0.000   clock network delay (ideal)
+                  0.000    0.000    0.000 ^ _22_/CK (DFF_X1)
+                  0.026    0.104    0.104 ^ _22_/Q (DFF_X1)
+    6   10.297                              count[0] (net)
+                  0.026    0.000    0.104 ^ _14_/A3 (AND3_X1)
+                  0.020    0.060    0.164 ^ _14_/ZN (AND3_X1)
+    3    6.119                              _05_ (net)
+                  0.020    0.000    0.164 ^ _20_/B1 (OAI21_X1)
+                  0.010    0.017    0.181 v _20_/ZN (OAI21_X1)
+    1    1.845                              _08_ (net)
+                  0.010    0.000    0.181 v _21_/A (AOI21_X1)
+                  0.020    0.038    0.219 ^ _21_/ZN (AOI21_X1)
+    1    1.450                              _03_ (net)
+                  0.020    0.000    0.219 ^ _25_/D (DFF_X1)
+                                    0.219   data arrival time
+
+                  0.000   10.000   10.000   clock clk (rise edge)
+                           0.000   10.000   clock network delay (ideal)
+                           0.000   10.000   clock reconvergence pessimism
+                                   10.000 ^ _25_/CK (DFF_X1)
+                          -0.035    9.965   library setup time
+                                    9.965   data required time
+--------------------------------------------------------------------------------
+                                    9.965   data required time
+                                   -0.219   data arrival time
+--------------------------------------------------------------------------------
+                                    9.747   slack (MET)
+
+
+
+========================================
+          HOLD ANALYSIS
+========================================
+Startpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout      Cap     Slew    Delay     Time   Description
+--------------------------------------------------------------------------------
+                  0.000    0.000    0.000   clock clk (rise edge)
+                           0.000    0.000   clock network delay (ideal)
+                  0.000    0.000    0.000 ^ _25_/CK (DFF_X1)
+                  0.013    0.091    0.091 ^ _25_/Q (DFF_X1)
+    3    4.395                              count[3] (net)
+                  0.013    0.000    0.091 ^ _21_/B2 (AOI21_X1)
+                  0.006    0.015    0.106 v _21_/ZN (AOI21_X1)
+    1    1.372                              _03_ (net)
+                  0.006    0.000    0.106 v _25_/D (DFF_X1)
+                                    0.106   data arrival time
+
+                  0.000    0.000    0.000   clock clk (rise edge)
+                           0.000    0.000   clock network delay (ideal)
+                           0.000    0.000   clock reconvergence pessimism
+                                    0.000 ^ _25_/CK (DFF_X1)
+                           0.002    0.002   library hold time
+                                    0.002   data required time
+--------------------------------------------------------------------------------
+                                    0.002   data required time
+                                   -0.106   data arrival time
+--------------------------------------------------------------------------------
+                                    0.104   slack (MET)
+
+
+
+========================================
+       TIMING CHECK SUMMARY
+========================================
+wns 0.00
+tns 0.00
+worst slack 9.75
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                      10.00        0.00      5.00
+OpenSTA> exit
+Saving command history
+acer@LAPTOP-NEA968MP:/mnt/d/project/counter$ cd /mnt/d/project/counter
+sta sta/run_sta.tcl
+OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details.
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: There is 1 input port missing set_input_delay.
+Warning: There are 4 output ports missing set_output_delay.
+Warning: There are 4 unconstrained endpoints.
+
+========================================
+          DESIGN SUMMARY
+========================================
+
+========================================
+         SETUP ANALYSIS
+========================================
+Startpoint: _22_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout      Cap     Slew    Delay     Time   Description
+--------------------------------------------------------------------------------
+                  0.000    0.000    0.000   clock clk (rise edge)
+                           0.000    0.000   clock network delay (ideal)
+                  0.000    0.000    0.000 ^ _22_/CK (DFF_X1)
+                  0.026    0.104    0.104 ^ _22_/Q (DFF_X1)
+    6   10.297                              count[0] (net)
+                  0.026    0.000    0.104 ^ _14_/A3 (AND3_X1)
+                  0.020    0.060    0.164 ^ _14_/ZN (AND3_X1)
+    3    6.119                              _05_ (net)
+                  0.020    0.000    0.164 ^ _20_/B1 (OAI21_X1)
+                  0.010    0.017    0.181 v _20_/ZN (OAI21_X1)
+    1    1.845                              _08_ (net)
+                  0.010    0.000    0.181 v _21_/A (AOI21_X1)
+                  0.020    0.038    0.219 ^ _21_/ZN (AOI21_X1)
+    1    1.450                              _03_ (net)
+                  0.020    0.000    0.219 ^ _25_/D (DFF_X1)
+                                    0.219   data arrival time
+
+                  0.000   10.000   10.000   clock clk (rise edge)
+                           0.000   10.000   clock network delay (ideal)
+                           0.000   10.000   clock reconvergence pessimism
+                                   10.000 ^ _25_/CK (DFF_X1)
+                          -0.035    9.965   library setup time
+                                    9.965   data required time
+--------------------------------------------------------------------------------
+                                    9.965   data required time
+                                   -0.219   data arrival time
+--------------------------------------------------------------------------------
+                                    9.747   slack (MET)
+
+
+
+========================================
+          HOLD ANALYSIS
+========================================
+Startpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout      Cap     Slew    Delay     Time   Description
+--------------------------------------------------------------------------------
+                  0.000    0.000    0.000   clock clk (rise edge)
+                           0.000    0.000   clock network delay (ideal)
+                  0.000    0.000    0.000 ^ _25_/CK (DFF_X1)
+                  0.013    0.091    0.091 ^ _25_/Q (DFF_X1)
+    3    4.395                              count[3] (net)
+                  0.013    0.000    0.091 ^ _21_/B2 (AOI21_X1)
+                  0.006    0.015    0.106 v _21_/ZN (AOI21_X1)
+    1    1.372                              _03_ (net)
+                  0.006    0.000    0.106 v _25_/D (DFF_X1)
+                                    0.106   data arrival time
+
+                  0.000    0.000    0.000   clock clk (rise edge)
+                           0.000    0.000   clock network delay (ideal)
+                           0.000    0.000   clock reconvergence pessimism
+                                    0.000 ^ _25_/CK (DFF_X1)
+                           0.002    0.002   library hold time
+                                    0.002   data required time
+--------------------------------------------------------------------------------
+                                    0.002   data required time
+                                   -0.106   data arrival time
+--------------------------------------------------------------------------------
+                                    0.104   slack (MET)
+
+
+
+========================================
+       TIMING CHECK SUMMARY
+========================================
+wns 0.00
+tns 0.00
+worst slack 9.75
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                      10.00        0.00      5.00
+========================================
+Warning: run_sta.tcl, 43 report_checks -summary is not a known keyword or flag.
+Startpoint: _22_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _25_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _22_/CK (DFF_X1)
+   0.10    0.10 ^ _22_/Q (DFF_X1)
+   0.06    0.16 ^ _14_/ZN (AND3_X1)
+   0.02    0.18 v _20_/ZN (OAI21_X1)
+   0.04    0.22 ^ _21_/ZN (AOI21_X1)
+   0.00    0.22 ^ _25_/D (DFF_X1)
+           0.22   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+          10.00 ^ _25_/CK (DFF_X1)
+  -0.03    9.97   library setup time
+           9.97   data required time
+---------------------------------------------------------
+           9.97   data required time
+          -0.22   data arrival time
+---------------------------------------------------------
+           9.75   slack (MET)
+
+
