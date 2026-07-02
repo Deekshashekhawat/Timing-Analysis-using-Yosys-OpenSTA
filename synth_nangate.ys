@@ -1,0 +1,25 @@
+read_verilog counter.v
+
+hierarchy -top counter
+
+proc
+
+opt
+
+fsm
+
+opt
+
+memory
+
+opt
+
+techmap
+
+dfflibmap -liberty NangateOpenCellLibrary_typical.lib
+
+abc -liberty NangateOpenCellLibrary_typical.lib
+
+clean
+
+write_verilog counter_nangate.v

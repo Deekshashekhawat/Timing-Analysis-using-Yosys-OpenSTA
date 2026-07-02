@@ -1,0 +1,5 @@
+read_verilog counter.v
+
+synth -top counter
+
+write_verilog counter_netlist.v
