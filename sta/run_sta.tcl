@@ -1,10 +1,10 @@
-read_liberty NangateOpenCellLibrary_typical.lib
+read_liberty library/NangateOpenCellLibrary_typical.lib
 
-read_verilog counter_nangate.v
+read_verilog synthesis/counter_nangate.v
 
 link_design counter
 
-read_sdc counter.sdc
+read_sdc sta/counter.sdc
 
 check_setup
 
