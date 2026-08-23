@@ -1,3 +1,8 @@
+//THIS FILE IS THE RESULT OF TIMING ANAYLSIS REPORT
+
+
+
+
 acer@LAPTOP-NEA968MP:/mnt/d/project/counter$ cd /mnt/d/project/counter
 sta sta/run_sta.tcl
 OpenSTA 2.0.17 GITDIR-NOT Copyright (c) 2019, Parallax Software, Inc.
